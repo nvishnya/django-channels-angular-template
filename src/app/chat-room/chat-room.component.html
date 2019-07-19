@@ -1,0 +1,5 @@
+<div style="text-align: center;">
+  <input [(ngModel)]="message" (keyup.enter)="sendMessage()" placeholder="Type your message here">
+  <button (click)="sendMessage()">Send</button>
+  <app-messages-list [messages]="messages"></app-messages-list>
+</div>
