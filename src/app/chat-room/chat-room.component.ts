@@ -25,9 +25,9 @@ export class ChatRoomComponent implements OnInit {
       .filter(x => x)[0];
 
     this.getMessages();
-    this.chatService.onMessage().subscribe((message: Message) => {
-      console.log(message);
-      this.messages.push(message);
+    this.chatService.onMessage().subscribe((message: Object) => {
+      this.messages = [...this.messages, message["message"]];
+
     });
   }
   getMessages() {
