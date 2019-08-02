@@ -9,6 +9,7 @@ import { ChatRoomComponent } from './chat-room/chat-room.component';
 import { LobbyComponent } from './lobby/lobby.component';
 
 import { AppRoutingModule } from './app-routing.module';
+import {APP_BASE_HREF} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [Title],
+  providers: [Title, {provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
