@@ -9,6 +9,7 @@ verify_ssl = true
 django = "*"
 djangorestframework = "*"
 channels = "*"
+django-webpack-loader = "*"
 
 [requires]
 python_version = "3.6"
