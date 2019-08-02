@@ -16,18 +16,14 @@ export class ChatRoomComponent implements OnInit {
   constructor(
     private chatService: ChatService,
     private messageService: MessageService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.room = window.location.pathname
       .split("/")
       .reverse()
       .filter(x => x)[0];
-    
-    // this.chatService.enterChatRoom(this.room);
-    // this.chatService.onJoined().subscribe(data => {
-    //   console.log("connected");
-    // });
+
     this.getMessages();
     this.chatService.onMessage().subscribe((message: Message) => {
       console.log(message);

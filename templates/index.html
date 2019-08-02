@@ -1,0 +1,7 @@
+{% load render_bundle from webpack_loader %}
+<app-root></app-root>
+{% render_bundle 'main' %}
+{% render_bundle 'polyfills' %}
+{% render_bundle 'runtime' %}
+{% render_bundle 'styles' %}
+{% render_bundle 'vendor' %}
