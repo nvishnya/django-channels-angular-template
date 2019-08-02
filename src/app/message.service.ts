@@ -18,8 +18,7 @@ export class MessageService {
 
   getMessages(room: string): Observable<Message[]> {
     return this.http.get<Message[]>(
-      // "http://localhost:8000/api/messages/abc/"
-      window.location.host + "/api/messages/" + room
+      window.location.origin + "/api/messages/" + room
     );
   }
 }
