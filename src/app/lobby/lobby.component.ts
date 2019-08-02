@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { ChatService } from "../chat.service";
 import {Router} from '@angular/router';
 
 @Component({
@@ -7,19 +6,12 @@ import {Router} from '@angular/router';
   templateUrl: "./lobby.component.html"
   // styleUrls: ['./lobby.component.css']
 })
-export class LobbyComponent implements OnInit {
+export class LobbyComponent {
   room = "";
-  constructor(private chatService: ChatService, private router: Router) {}
-
-  ngOnInit() {
-    // this.chatService.onJoined().subscribe(data => {
-    //   console.log("connected");
-    // });
-  }
+  constructor(private router: Router) {}
 
   enterChatRoom() {
     if (this.room != "") {
-      // this.chatService.enterChatRoom(this.room);
       this.router.navigate([this.room]);
     }
   }
